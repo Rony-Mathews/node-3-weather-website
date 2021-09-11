@@ -5,6 +5,7 @@ const geocode = require("./utils/geocode");
 const getWeather = require("./utils/weatherApi");
 
 const app = express();
+const port = process.env.PORT || 3000;
 const publidDirPath = path.join(__dirname, "../public");
 const viewsPath = path.join(__dirname, "../templates/views");
 const partialsPath = path.join(__dirname, "../templates/partials");
@@ -75,6 +76,6 @@ app.get("*", (req, res) => {
   res.render("404-not-found", { title: "404 not found", message: "Page not found", name: "Rony Mathews" });
 });
 
-app.listen(3000, () => {
-  console.log("Server is up and running on port 3000");
+app.listen(port, () => {
+  console.log("Server is up and running on port " + port);
 });
