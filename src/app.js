@@ -54,7 +54,7 @@ app.get("/weather", (req, res) => {
       res.send({
         searchText: location,
         location: place_name,
-        forecast: weatherResp.description + " - It is currently " + weatherResp.temperature + ' degrees out. It feels like ' + weatherResp.feelslike + ' degrees out!'
+        forecast: weatherResp.description + " - It is currently " + weatherResp.temperature + ' degrees out. It feels like ' + weatherResp.feelslike + ' degrees out! The humidity is ' + weatherResp.humidity + "%."
       });
     });
   });
